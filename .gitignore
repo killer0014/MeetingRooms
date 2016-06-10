@@ -1,2 +1,4 @@
 # Generic
 /target/
+/.settings/
+/.classpath

@@ -1,1 +1,1 @@
-http://meeting-room-reservation-group.github.io/create-local-git-repository/
+# http://meeting-room-reservation-group.github.io/create-local-git-repository/
