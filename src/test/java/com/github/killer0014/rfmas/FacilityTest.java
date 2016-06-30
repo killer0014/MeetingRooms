@@ -1,10 +1,15 @@
 package com.github.killer0014.rfmas;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class FacilityTest {
+	@Rule
+	public ExpectedException exception = ExpectedException.none();
+
 
 	@Test
 	public void createComputer() throws Exception {
@@ -13,12 +18,16 @@ public class FacilityTest {
 	
 	@Test
 	public void createBeamer() throws Exception {
-		assertEquals ("Beamer", new Facility(" Beamer").getName());
+		assertEquals ("Beamer", new Facility("Beamer").getName());
 	}
 
-	@Test(expected = IllegalArgumentException.class)
-	public void createNoArgs() throws Exception {
+	@Test
+	public void createNameNull() throws Exception {
+		exception.expect(IllegalArgumentException.class);
+		exception.expectMessage("Mag niet empty zijn");
+		
 		new Facility(null);		
 	}
 	
+
 }
